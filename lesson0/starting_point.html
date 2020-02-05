@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>p5.js library</title>
+<!-- Fetch the Processing library from the Content Delivery Network (cdn) -->
+<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script> 
+</head>
+
+<body style="margin: 0;">
+<script>
+	function setup() { 
+		createCanvas(800, 600);
+	} 
+	
+	function draw() {
+		//set the whole canvas to one color
+		background(0, 100, 255); //RGB colors
+
+		//set line color to black
+		stroke(0, 0, 0);
+		//stroke("#000000"); //you can also use hex color strings
+
+		//draw a line from the top left corner to your mouse
+		line(0, 0, mouseX, mouseY);
+	}
+</script>
+</body>
+
+</html>
