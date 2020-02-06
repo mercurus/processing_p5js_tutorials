@@ -1,4 +1,5 @@
 ### Lesson 0
+
 # Intro to programming and Processing
 
 In this beginner-friendly class we are learning the programming language [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript).To get a better grasp of it, 
@@ -185,7 +186,7 @@ That's all it takes to change your canvas color!
 
 <br/>
 
-###Pixel positions on the canvas all use positive numbers
+### Pixel positions on the canvas all use positive numbers
 
 You may be familiar with the the [cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) that gets taught in Math class. To define a single set of coordinates 
 you use x for horizontal positions, y for vertical positions, and the origin or center is smack dab in the middle. Well in Processing x and y are the same but the origin instead is the top left corner,
@@ -209,7 +210,7 @@ your canvas width or height, or if you use negative numbers, those parts simply 
 
 <br/>
 
-###Processing makes certain things convenient
+### Processing makes certain things convenient
 
 Next we're going to learn a bit about variables. A variable is used to store data. Variables have a name and a value, both given by the programmer. The kinds of things you can store in a variable
 is practically limitless but for now we'll just focus on using numbers. In the next lesson we'll go much deeper into variables.
@@ -244,7 +245,7 @@ Remember when I said that `draw()` is called repeatedly? With this code now the 
 
 <br/>
 
-###Programming is all about testing and learning
+### Programming is all about testing and learning
 
 Spend some time playing with your code. Change the size of your canvas and the color of its background. Change the coordinates of your line and add more lines. Try making lines with coordinates 
 that uses both the canvas size and mouse position like `line(0, mouseY, width, mouseY);`.
