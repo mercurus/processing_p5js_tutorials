@@ -153,7 +153,7 @@ Here it's only doing one thing: call the p5 function `background()` to paint the
 
 <br/>
 
-### Processing uses Red, Green, Blue coloring*
+### Processing uses Red, Green, Blue coloring\*
 
 The most common way to choose colors on a computer is using different amounts of Red, Green, and Blue (RGB). If you want a bright red your color would use 100% Red, 0% Green, 
 and 0% Blue. To get white it's 100% of each R, G, and B. For black it's 0% of each R, G, and B. 
