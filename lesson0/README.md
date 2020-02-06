@@ -191,7 +191,7 @@ You may be familiar with the the [cartesian coordinate system](https://en.wikipe
 you use x for horizontal positions, y for vertical positions, and the origin or center is smack dab in the middle. Well in Processing x and y are the same but the origin instead is the top left corner,
 and all coordinates on the canvas use positive numbers. The very first pixel in the top left is where x = 0 and y = 0. When moving right the number for x increases and when moving down y increases. 
 
-![canvas coordinates](https://cdn.tutsplus.com/net/uploads/legacy/916_canvas1/1.jpg)
+![canvas coordinates](canvas_coordinates.jpg)
 
 With that in mind let's learn the function for drawing a line using Processing. It's pretty simple, all you need to do is call the function and tell it both end points in this 
 order: `line(x1, y1, x2, y2);`. So back in the [p5 online editor](https://editor.p5js.org/) we can draw our own line on the canvas if we write some code and give it some coordinates 
