@@ -1,0 +1,54 @@
+<html>
+
+<head>
+<title>p5.js library</title>
+<!-- Fetch the Processing library from the Content Delivery Network (cdn) -->
+<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script> 
+</head>
+
+<body style="margin: 0;">
+<script>
+	//Color changing landscape
+
+	function setup() {
+		createCanvas(800, 600);
+	}
+
+	function draw() {
+		let thirdOfHeight = height / 3;
+		let skyColor, sunColor, hillColor;
+
+		//figure out which section of the sky the mouse is in
+		if (mouseY < thirdOfHeight) {
+			//daytime colors for the highest
+			skyColor = "#66ffff";
+			sunColor = "#ffdd00";
+			hillColor = "#009900";
+		}
+		else if (mouseY < thirdOfHeight * 2) {
+			skyColor = "#0033cc";
+			sunColor = "#ff9900";
+			hillColor = "#006600";
+		}
+		else {
+			//night time colors for the lowest
+			skyColor = "#001133";
+			sunColor = "#ff3300";
+			hillColor = "#003300";
+		}
+
+		//paint the canvas with the relevant sky color
+		background(skyColor);
+
+		//draw the sun
+		fill(sunColor);
+		ellipse(mouseX, mouseY, 100, 100);
+
+		//draw the hill last so it can be on top of the sun
+		fill(hillColor);
+		triangle(0, height, width / 2, height - 150, width, height);
+	}
+</script>
+</body>
+
+</html>

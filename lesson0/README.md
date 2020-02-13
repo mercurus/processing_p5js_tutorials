@@ -1,8 +1,20 @@
-### Lesson 0
+# Lesson 0
 
-# Intro to programming and Processing
+1. [Introduction](#intro)
+2. [JavaScript is an interpreted language](#interpreted)
+3. [JavaScript is interpreted by internet browsers](#browsers)
+4. [JavaScript runs client-side, not server-side](#client)
+5. [There are many JavaScript libraries](#libraries)
+6. [Processing (p5) is a library for drawing with code](#processing)
+7. [Code has lots of rules](#rules)
+8. [Colors are picked using Red, Green, Blue](#rgb)
+9. [Canvas coordinates use positive numbers](#canvas)
+10. [Processing makes certain things convenient](#variables)
+11. [Programming is all about testing and learning](#reference)
 
-In this beginner-friendly class we are learning the programming language [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript).To get a better grasp of it, 
+### Intro to programming and Processing <a name="intro"></a>
+
+In this beginner-friendly class we are learning the programming language [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript). To get a better grasp of it, 
 and to have some fun along the way, we'll also be learning to make generative art using the library [p5](https://p5js.org/) (aka Processing).
 To really understand though we need to know the context of the language and how to think like a programmer.
 
@@ -16,7 +28,7 @@ Feel free to skip around the lessons, and don't worry too much if you don't unde
 
 <br/>
 
-### JavaScript is an interpreted language, not a compiled language
+### JavaScript is an interpreted language, not a compiled language <a name="interpreted"></a>
 
 Code can't be executed by a computer directly. We write code as text, often with lots of plain English words like *if, else, for,* and *function.* 
 Code needs to be translated into [CPU instructions](https://en.wikipedia.org/wiki/Central_processing_unit) so the computer knows how to carry it out bit by bit. 
@@ -29,7 +41,7 @@ than those that are interpreted because compiling means all the translation happ
 
 <br/>
 
-### JavaScript is interpreted by internet browsers
+### JavaScript is interpreted by internet browsers <a name="browsers"></a>
 
 You're <!-- probably --> using a browser now to read this. 
 
@@ -52,7 +64,7 @@ There will be a separate lesson on HTML and CSS but we'll mostly focus on JavaSc
 
 <br/>
 
-### JavaScript runs client side as opposed to server side
+### JavaScript runs client side as opposed to server side <a name="client"></a>
 
 | Client Side | Server Side |
 | ----------- | ----------- |
@@ -68,11 +80,11 @@ A server is a computer that is dedicated to handling requests from users. Server
 Many modern websites utilize multiple servers to keep track of all the data and user traffic. The internet is basically a large network of many different servers 
 connected to each other. They're typically stored in [data centers](https://en.wikipedia.org/wiki/Data_center) and high end servers can cost many thousands of dollars. 
 
-Browsers are the client which communicate with web servers to show and navigate websites. When your browser opens files that are on your computer everything is happening client side.
+Browsers are the client which communicate with web servers to show and navigate websites. When you use your browser to open files that are on your computer everything is happening client side.
 
 <br/>
 
-### There are many JavaScript libraries
+### There are many JavaScript libraries <a name="libraries"></a>
 
 In any programming language a [library](https://en.wikipedia.org/wiki/Library_(computing)) is a group of related functions, variables, and tools that have been written using
 that language. They're designed to be reusable by others. JavaScript libraries can help with things like animation, form validation and submission, interactive tables, 
@@ -87,11 +99,12 @@ libraries need to be downloaded and/or imported directly in your code.
 
 <br/>
 
-### Processing is a library for drawing with code
+### Processing is a library for drawing with code <a name="processing"></a>
 
 The library [Processing](https://processing.org/) began with Ben Fry and Casey Reas in 2001 at MIT. They wanted to make it easier to get into writing code and 
 to promote the visual arts. Processing was originally written using the language Java. There are a few similarities between Java and JavaScript but the more you dig into 
 them the more differences you'll find. However the library Processing is designed to be used the same regardless of which language you're writing it in. 
+The JavaScript version is called p5.
 
 Processing gives you a canvas on the screen and provides the ability to draw shapes and visualize data. It allows you to play with color, 
 lines and curves, positioning, user input, all sorts of things. What Processing is used for is up to you. With the ability to draw using code you can make art, visual effects, 
@@ -114,7 +127,7 @@ In Processing, programs are often called sketches. This sketch sets the size of 
 
 <br/>
 
-### Code has lots of rules
+### Code has lots of rules <a name="rules"></a>
 
 One of the first things you need to learn about any language is its [syntax](https://en.wikipedia.org/wiki/Syntax_(programming_languages)). The syntax of a language defines
 the rules for which combinations of text characters must be followed so that it can be correctly read by the computer. When code doesn't follow the rules it is said to have
@@ -125,10 +138,11 @@ Above you may notice several things about JavaScript's syntax. When a curly brac
 code block which is where you write [statements](https://www.w3schools.com/js/js_statements.asp) (code). 
 
 The keyword **`function`** declares that the code block following it is for a [function](https://www.tutorialspoint.com/computer_programming/computer_programming_functions.htm), 
-which is a reusable set of commands. After **`function`** is the name of the function, in this case `setup`, ending with parentheses. All function
-declarations end with `()` although sometimes there's other stuff inside the parentheses (we'll get to this in a later lesson). 
+which is a reusable set of commands. After **`function`** is the name, in this case `setup`, and it ends with parentheses. All function
+declarations must end with `()` although sometimes there's other stuff inside the parentheses (we'll get to this in a later lesson). Function declarations cannot use the
+same name as one that already exists (you can't have more than 1 function named `setup` etc).
 
-The only command in `setup()` is a call to another function called `createCanvas()` which is a part of the library p5. It sets the width and height of the canvas, above they're both
+The only statement in `setup()` is a call to another function named `createCanvas()` which is a part of the library p5. It sets the width and height of the canvas, above they're both
 `400` separated by a comma `,`. Then it ends with a parenthesis `)` to close the function call and a semicolon `;` to end the statement (all statements end with a semicolon). 
 When setting the canvas size the first number is for the width, second for the height, and you can make them as big as you want (try not to get bigger than your monitor!)
 
@@ -154,7 +168,7 @@ Here it's only doing one thing: call the p5 function `background()` to paint the
 
 <br/>
 
-### Processing uses Red, Green, Blue coloring
+### Processing uses Red, Green, Blue coloring <a name="rgb"></a>
 
 The most common way to choose colors on a computer is using different amounts of Red, Green, and Blue (RGB). If you want a bright red your color would use 100% Red, 0% Green, 
 and 0% Blue. To get white it's 100% of each R, G, and B. For black it's 0% of each R, G, and B. 
@@ -186,7 +200,7 @@ That's all it takes to change your canvas color!
 
 <br/>
 
-### Pixel positions on the canvas all use positive numbers
+### Pixel positions on the canvas all use positive numbers <a name="canvas"></a>
 
 You may be familiar with the the [cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) that gets taught in Math class. To define a single set of coordinates 
 you use x for horizontal positions, y for vertical positions, and the origin or center is smack dab in the middle. Well in Processing x and y are the same but the origin instead is the top left corner,
@@ -195,7 +209,7 @@ and all coordinates on the canvas use positive numbers. The very first pixel in 
 ![canvas coordinates](canvas_coordinates.jpg)
 
 With that in mind let's learn the function for drawing a line using Processing. It's pretty simple, all you need to do is call the function and tell it both end points in this 
-order: `line(x1, y1, x2, y2);`. So back in the [p5 online editor](https://editor.p5js.org/) we can draw our own line on the canvas if we write some code and give it some coordinates 
+order: `line(x1, y1, x2, y2);`. So back in the [p5 online editor](https://editor.p5js.org/) we can draw our own line on the canvas if we update our function and give it some coordinates 
 (don't forget to restart your sketch afterwards).
 
 ```javascript
@@ -210,7 +224,7 @@ your canvas width or height, or if you use negative numbers, those parts simply 
 
 <br/>
 
-### Processing makes certain things convenient
+### Processing makes certain things convenient <a name="variables"></a>
 
 Next we're going to learn a bit about variables. A variable is used to store data. Variables have a name and a value, both given by the programmer. The kinds of things you can store in a variable
 is practically limitless but for now we'll just focus on using numbers. In the next lesson we'll go much deeper into variables.
@@ -245,7 +259,7 @@ Remember when I said that `draw()` is called repeatedly? With this code now the 
 
 <br/>
 
-### Programming is all about testing and learning
+### Programming is all about testing and learning <a name="reference"></a>
 
 Spend some time playing with your code. Change the size of your canvas and the color of its background. Change the coordinates of your line and add more lines. Try making lines with coordinates 
 that uses both the canvas size and mouse position like `line(0, mouseY, width, mouseY);`.
