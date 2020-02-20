@@ -1,0 +1,74 @@
+<html>
+
+<head>
+<title>p5.js library</title>
+<!-- Fetch the Processing library from the Content Delivery Network (cdn) -->
+<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script> 
+</head>
+
+<body style="margin: 0;">
+<script>
+	//Circle size changer
+
+	let buttonSize, shapeSize;
+	let centerX, centerY;
+
+	function setup() {
+		createCanvas(400, 400);
+		noStroke();
+		//initialize variables
+		buttonSize = 50;
+		shapeSize = 200;
+		centerX = width / 2;
+		centerY = height / 2;
+	}
+
+	function draw() {
+		//fill canvas with white
+		background(255);
+
+		//see if user clicked the "button"
+		if (mouseIsPressed === true && mouseX < buttonSize && mouseY < buttonSize) {
+			//open the input dialog box
+			let userInput = prompt("Enter a number for a new circle diameter");
+			let newSize = parseInt(userInput);
+
+			//determine response
+			let response = "";
+			if (userInput === null) {
+				response = "Input canceled";
+			}
+			else if (isNaN(newSize)) {
+				response = userInput + " is Not a Number";
+			} 
+			else if (newSize <= 0) {
+				response = "Number must be greater than 0";
+				console.log(asdf);
+			}
+			else {
+				//checks were good, time to make the change
+				shapeSize = newSize;
+				response = "Diameter changed to " + shapeSize;
+			}
+
+			//notify the user
+			alert(response); 
+			console.log(response);
+		} //end mouseIsPressed
+
+		//buttons
+		fill(255, 0, 0); //red
+		rect(0, 0, buttonSize, buttonSize);
+		
+		//shadow
+		fill(50); //dark grey
+		ellipse(centerX, centerY, 250, 250);
+
+		//center circle
+		fill(0, 0, 255); //blue
+		ellipse(centerX, centerY, shapeSize, shapeSize);
+	}
+
+</script>
+</body>
+</html>
