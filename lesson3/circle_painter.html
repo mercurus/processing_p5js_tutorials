@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Circle Painter</title>
+	<!-- if you have Processing downloaded use this tag: <script src="p5.js"></script> -->
+	<!-- otherwise fetch it from the Content Delivery Network (cdn) -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script> 
+	<!-- and make sure sketch.js is in the same folder as this -->
+	<script src="sketch.js"></script> 
+</head>
+<body>
+	Use Stroke:<input type="checkbox" id="idUseStroke" checked="checked">
+	Thickness:<input type="number" id="idThickness" value="3" min="1">
+	Use Fill:<input type="checkbox" id="idUseFill" checked="checked">
+	Diameter:<input type="number" id="idDiameter" value="100" min="5">
+	Circle Color:
+	<select id="idColor">
+		<option value="#FF0000">Red</option>
+		<option value="#00FF00">Green</option>
+		<option value="#0000FF">Blue</option>
+	</select>
+	<button onclick="clearCanvas();">Clear!</button>
+	<br>
+</body>
+</html>
