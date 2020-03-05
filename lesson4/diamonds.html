@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Diamonds</title>
+	<!-- if you have Processing downloaded use this tag: <script src="p5.js"></script> -->
+	<!-- otherwise fetch it from the Content Delivery Network (cdn) -->
+	<script src="https://cdn.jsdelivr.net/npm/p5"></script> 
+</head>
+
+<body>
+<script>
+	//these are global since they don't change. they don't need to be remade and re-initialized over and over
+	let centerX, centerY, diamondCount; 
+
+	function setup() {
+		createCanvas(1000, 800);
+		noFill(); //don't paint in the quads
+		centerX = width / 2;
+		centerY = height / 2;
+		diamondCount = 15;
+	}
+
+	function draw() {
+		//if we're not pressing down a mouse button, then repaint the canvas grey
+		if (!mouseIsPressed) {
+			background(220);
+		}
+
+		//make some variables
+		let pad, partialPad, loopPercentage;
+		let distance = abs(centerY - mouseY) / 10;
+
+		//draw diamonds in a loop
+		for (let i = 0; i <= diamondCount; i++) {
+			//determine padding distances
+			pad = i * distance;
+			partialPad = pad * 0.5;
+
+			//as the loop progresses the color gets darker
+			loopPercentage = i / diamondCount;
+			stroke(255 - (loopPercentage * 255), 0, 0);
+			//strokeWeight(i);
+
+			//horizontal diamond
+			quad(partialPad, centerY, //west
+				centerX, centerY - pad, //north
+				width - partialPad, centerY, //east
+			 	centerX, centerY + pad); //south
+
+			//vertical diamond
+			quad(centerX, partialPad, //north
+				centerX + pad, centerY, //east
+				centerX, height - partialPad, //south
+				centerX - pad, centerY); //west
+		}
+	}
+
+</script>
+</body>
+</html>
