@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Starfield</title>
+	<!-- if you have Processing downloaded use this tag: <script src="p5.js"></script> -->
+	<!-- otherwise fetch it from the Content Delivery Network (cdn) -->
+	<script src="https://cdn.jsdelivr.net/npm/p5"></script> 
+</head>
+
+<body style="margin: 0">
+<script>
+	let starXs, starYs, starSizes;
+
+	function setup() {
+		createCanvas(1200, 800);
+
+		//initialize arrays
+		starXs = [];
+		starYs = [];
+		starSizes = [];
+
+		addStars();
+	}
+
+	function draw() {
+		if (mouseIsPressed) {
+			//if we click to the right of the canvas
+			if (mouseX > width) {
+				//reset arrays to empty
+				starXs = [];
+				starYs = [];
+				starSizes = [];
+			}
+
+			//always do this when the mouse is pressed
+			addStars();
+		}
+
+		//paint canvas black
+		background(0);
+
+		//set star colors
+		fill("#6ff");
+		stroke("#039");
+		strokeWeight(3);
+
+		//draw all the stars
+		for (let i = 0; i < starSizes.length; i++) {
+			circle(starXs[i], starYs[i], starSizes[i]);
+		}
+	}
+
+	function addStars() {
+		let numStarsToAdd = 1;
+		for (let i = 0; i < numStarsToAdd; i++) {
+			//add another element to each array
+			starXs.push(random(width));
+			starYs.push(random(height));
+			starSizes.push(random(15));
+		}
+
+		//set window/tab title
+		document.title = "Starfield - " + starSizes.length;
+	}
+
+</script>
+</body>
+</html>
